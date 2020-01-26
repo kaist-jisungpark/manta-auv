@@ -54,22 +54,24 @@ def setup_task_environment(self):
 	self.waypoints = list()
 
 	# Append each of the waypoints to the list.
-	self.waypoints.append(Pose(Point( 0, 0, -0.5), quaternions[0]))
-	self.waypoints.append(Pose(Point( 5, 0, -0.5), quaternions[1]))
-	self.waypoints.append(Pose(Point( 8, 1, -0.5), quaternions[2]))
-	self.waypoints.append(Pose(Point( 9, 0, -0.5),quaternions[3]))
+	self.waypoints.append(Pose(Point( 3, 0, -0.5), quaternions[0]))
+	self.waypoints.append(Pose(Point( 2, 2, -0.5), quaternions[1]))
+	self.waypoints.append(Pose(Point( 0, 0, -0.5), quaternions[2]))
+	self.waypoints.append(Pose(Point( 3, 2, -0.5),quaternions[3]))
 	self.waypoints.append(Pose(Point( 8, -1, -0.5),quaternions[4]))
-	self.waypoints.append(Pose(Point( 0, 0, -0.5),quaternions[5]))
+	self.waypoints.append(Pose(Point( 7, 2, -0.5),quaternions[5]))
+	self.waypoints.append(Pose(Point( 0, 0, -0.5),quaternions[6]))
 
 	# Create a mapping of points of interest to waypoint locations
 
 	pool_locations = (
-					 ('dive', self.waypoints[0]),
-                     ('gate', self.waypoints[1]),
-                     ('pole1', self.waypoints[2]),
-                     ('pole2', self.waypoints[3]),
-					 ('pole3', self.waypoints[4]),
-					 ('start', self.waypoints[5]))
+					 ('point1', self.waypoints[0]),
+                     ('point2', self.waypoints[1]),
+                     ('point3', self.waypoints[2]),
+                     ('point4', self.waypoints[3]),
+					 ('docking', self.waypoints[4]),
+					 ('gate', self.waypoints[5]),
+					 ('pole', self.waypoints[5]))
 	
 	# Store the mapping as an ordered dictionary so we can visit the target zones in sequence
 	self.pool_locations = OrderedDict(pool_locations)
